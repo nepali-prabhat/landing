@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import AI from './ai.svg';
+const LearnMore = ()=><div className="link highlight">Learn More</div>
 export default class Services extends Component {
     constructor(props) {
         super(props);
@@ -11,6 +12,7 @@ export default class Services extends Component {
                 Lorem Ipsum has been the industry's stdard dummy text ever since
                 the 1500s, when an unknown printer.
                 `,
+                src:AI,
                 cards:[
                     {
                         title: "Analytics",
@@ -41,6 +43,7 @@ export default class Services extends Component {
                 Lorem Ipsum has been the industry's stdard dummy text ever since
                 the 1500s, when an unknown printer.
                 `,
+                src:AI,
                 cards:[
                     {
                         title: "Analytics",
@@ -71,6 +74,7 @@ export default class Services extends Component {
                 Lorem Ipsum has been the industry's stdard dummy text ever since
                 the 1500s, when an unknown printer.
                 `,
+                src:AI,
                 cards:[
                     {
                         title: "Analytics",
@@ -135,7 +139,24 @@ export default class Services extends Component {
                             </p>
                         </div>
                         <div className="service-img-container">
-                            <img className="service-img" src={AI} alt={this.state.tabs[this.state.activeIndex].title}/>
+                            <img className="service-img" src={this.state.tabs[this.state.activeIndex].src} alt={this.state.tabs[this.state.activeIndex].title}/>
+                        </div>
+                        <div className="service-card-contaienr">
+                            {
+                                this.state.tabs[this.state.activeIndex].cards.map((c)=>{
+                                    return (
+                                        <div className="service-card" key={c.title}>
+                                            <h3>
+                                                {c.title}
+                                            </h3>
+                                            <p className="txt">
+                                                {c.desc}
+                                            </p>
+                                            <LearnMore />
+                                        </div>
+                                    )
+                                })
+                            }
                         </div>
                 </div>
             </section>

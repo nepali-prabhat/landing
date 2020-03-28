@@ -85,6 +85,11 @@ h2{
   font-size: 1.5em;
   font-weight: 700;
 }
+h3{
+  color: var(--black1);
+  font-size: 1.1em;
+  font-weight: 700;
+}
 .txt{
   line-height: 35px;
   font-size: 1rem;
@@ -92,8 +97,6 @@ h2{
 .highlight{
   color: var(--primary);
 }
-
-
 
 input{
   height: 39px;
