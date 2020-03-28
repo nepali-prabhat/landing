@@ -34,7 +34,7 @@ body {
   font-size: 0.9rem;
 }
 .link:hover{
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 button{
   height: 40px;

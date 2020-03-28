@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import heroImg from './hero.svg';
+import Services from './services';
 const LearnMore = ()=><div className="link highlight">Learn More</div>
-
 function App() {
   const noticeTitle = "Somtu SMS is here!"
   const noticeDesc = `Our latest project Somtu, 
@@ -59,12 +59,7 @@ function App() {
           <LearnMore/>
         </div>
       </section>
-      <section className="services">
-        <div className="sec-desc">
-          <h1>What <span className="highlight"> Pegcore </span> is all about.</h1>
-          <p className="txt">Procore is a data science platform that combines Data Lineage with End-to-End Pipelines on Kubernetes, engineered for science platform that  the enterprise.</p>
-        </div>
-      </section>
+      <Services />
     </div>
   );
 }

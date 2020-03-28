@@ -98,9 +98,7 @@ nav ul li{
 .hero .hero-img{
   width: 600px;
 }
-.App .services{
-  height: 100vh;
-}
+
 @media screen and (min-width: 1600px) {
   .hero .hero-img{
     width: 550px;
@@ -205,6 +203,17 @@ nav ul li{
   }
 }
 
+
+
+
+
+
+
+
+.App .services{
+  min-height: 100vh;
+}
+
 .sec-desc{
   display: flex;
   flex-flow: column;
@@ -220,4 +229,40 @@ nav ul li{
 }
 .sec-desc p{
   max-width: 550px;
+}
+.tabs-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slideshow-tabs{
+  min-width: 650px;
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.slideshow-tabs li{
+  list-style: none;
+  transition: all ease-out 200ms;
+}
+.active-tab{
+  color: var(--primary);
+  list-style: disc !important;
+}
+.content-container{
+  
+}
+@media screen and (max-width: 1100px){
+  .tabs-container{
+    /* display: grid; */
+  }
+  .slideshow-tabs{
+    display: flex;
+    flex-flow: column;
+    margin-top: 40px;
+  }
+  .slideshow-tabs li{
+    margin-top: 20px;
+  }
 }
