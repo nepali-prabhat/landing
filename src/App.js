@@ -62,7 +62,7 @@ function App() {
       <section className="services">
         <div className="sec-desc">
           <h1>What <span className="highlight"> Pegcore </span> is all about.</h1>
-          <p className="txt">Procore is a data science platform that combines Data Lineage with End-to-End Pipelines on Kubernetes, engineered for the enterprise.</p>
+          <p className="txt">Procore is a data science platform that combines Data Lineage with End-to-End Pipelines on Kubernetes, engineered for science platform that  the enterprise.</p>
         </div>
       </section>
     </div>

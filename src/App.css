@@ -39,6 +39,7 @@
   justify-content: space-between;
   z-index: 1000;
   padding: 20px 0px;
+  padding-top: 40px;
   /* background: white; */
 }
 @media screen and (max-width: 1000px){
@@ -202,4 +203,21 @@ nav ul li{
   .notice-desc > *{
     text-align: center;
   }
+}
+
+.sec-desc{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
+}
+.sec-desc > *{
+  text-align: center;
+}
+.sec-desc h1{
+  margin-bottom: var(--gap);
+}
+.sec-desc p{
+  max-width: 550px;
 }
