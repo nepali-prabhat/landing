@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import heroImg from './hero.svg';
 import Services from './services';
+import Projects from './projects';
 const LearnMore = ()=><div className="link highlight">Learn More</div>
 function App() {
   const noticeTitle = "Somtu SMS is here!"
@@ -60,6 +61,7 @@ function App() {
         </div>
       </section>
       <Services />
+      <Projects />
     </div>
   );
 }

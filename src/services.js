@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
+import { Carousel } from 'react-responsive-carousel';
 import AI from './ai.svg';
 const LearnMore = ()=><div className="link highlight">Learn More</div>
 export default class Services extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            manuallyClicked:false,
             activeIndex:0,
             tabs:[{
                 title:"Artificial Intelligence",
@@ -35,6 +37,14 @@ export default class Services extends Component {
                         Intelligence Laboratory understand.
                         `,
                     },
+                    {
+                        title: "Natural Language Processing",
+                        desc:`It has roots in a piece of classical Latin
+                        literature from 45 BC, making  Computer Science and Artificial
+                        Intelligence Laboratory understand.
+                        `,
+                    },
+
                 ]
             },
             {
@@ -46,10 +56,10 @@ export default class Services extends Component {
                 src:AI,
                 cards:[
                     {
-                        title: "Analytics",
-                        desc:`Contrary to popular belief, Lorem Ipsum is not simply
-                        random text. It has roots in a piece of classical Latin
-                        literature from 45 BC, making it over 2000 years old.
+                        title: "Pattern ",
+                        desc:`A powerful dual-perspective from two MIT schools – the
+                        MIT Sloan School of MIT Computer Science and Artificial
+                        Intelligence Laboratory understanding of AI.
                         `,
                     },
                     {
@@ -77,7 +87,7 @@ export default class Services extends Component {
                 src:AI,
                 cards:[
                     {
-                        title: "Analytics",
+                        title: "Hepatitis",
                         desc:`Contrary to popular belief, Lorem Ipsum is not simply
                         random text. It has roots in a piece of classical Latin
                         literature from 45 BC, making it over 2000 years old.
@@ -104,16 +114,21 @@ export default class Services extends Component {
     }
     interval = null;
     handleTabClick(i){
-        this.setState({activeIndex:i})
+        this.setState({activeIndex:i, manuallyClicked:true})
     }
 
     componentDidMount(){
-        // this.interval = setInterval(()=>{
-        //     this.setState({activeIndex:(this.state.activeIndex+1)%this.state.tabs.length})},4000
-        // )
+        this.interval = setInterval(()=>{
+                if(!this.state.manuallyClicked){
+                    this.setState({activeIndex:(this.state.activeIndex+1)%this.state.tabs.length})
+                }else{
+                    this.setState({manuallyClicked:false})
+                }
+            },4000
+        )
     }
     componentWillUnmount(){
-        // clearInterval(this.interval)
+        clearInterval(this.interval)
     }
     render() {
         return (
@@ -141,24 +156,24 @@ export default class Services extends Component {
                         <div className="service-img-container">
                             <img className="service-img" src={this.state.tabs[this.state.activeIndex].src} alt={this.state.tabs[this.state.activeIndex].title}/>
                         </div>
-                        <div className="service-card-contaienr">
-                            {
-                                this.state.tabs[this.state.activeIndex].cards.map((c)=>{
-                                    return (
-                                        <div className="service-card" key={c.title}>
-                                            <h3>
-                                                {c.title}
-                                            </h3>
-                                            <p className="txt">
-                                                {c.desc}
-                                            </p>
-                                            <LearnMore />
-                                        </div>
-                                    )
-                                })
-                            }
-                        </div>
                 </div>
+                <Carousel showStatus={false} className="service-card-container" centerMode useKeyboardArrows centerSlidePercentage={50} showThumbs={false} emulateTouch>
+                    {
+                        this.state.tabs[this.state.activeIndex].cards.map((c)=>{
+                            return (
+                                <div className="service-card" key={c.title}>
+                                    <h3>
+                                        {c.title}
+                                    </h3>
+                                    <p className="txt">
+                                        {c.desc}
+                                    </p>
+                                    <LearnMore />
+                                </div>
+                            )
+                        })
+                    }
+                </Carousel>
             </section>
         )
     }
