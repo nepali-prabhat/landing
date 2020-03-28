@@ -251,7 +251,21 @@ nav ul li{
   list-style: disc !important;
 }
 .content-container{
-  
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(550px,1fr));
+  margin-top: 60px;
+}
+.content-desc{
+  max-width: 550px;
+}
+.content-desc p{
+  margin-top: calc(var(--gap) - 10px);
+}
+.service-img-container{
+  margin: 0 auto;
+}
+.service-img{
+  width:250px;
 }
 @media screen and (max-width: 1100px){
   .tabs-container{

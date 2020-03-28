@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import AI from './ai.svg';
 export default class Services extends Component {
     constructor(props) {
         super(props);
@@ -130,6 +130,12 @@ export default class Services extends Component {
                             <h2>
                                 {this.state.tabs[this.state.activeIndex].title}
                             </h2>
+                            <p className="txt">
+                                {this.state.tabs[this.state.activeIndex].desc}
+                            </p>
+                        </div>
+                        <div className="service-img-container">
+                            <img className="service-img" src={AI} alt={this.state.tabs[this.state.activeIndex].title}/>
                         </div>
                 </div>
             </section>
