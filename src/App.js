@@ -3,6 +3,7 @@ import './App.css';
 import heroImg from './hero.svg';
 import Services from './services';
 import Projects from './projects';
+import Testimonial from './testemonials';
 const LearnMore = ()=><div className="link highlight">Learn More</div>
 function App() {
   const noticeTitle = "Somtu SMS is here!"
@@ -62,6 +63,7 @@ function App() {
       </section>
       <Services />
       <Projects />
+      <Testimonial/>
     </div>
   );
 }
