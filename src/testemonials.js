@@ -34,11 +34,6 @@ export default class Services extends Component {
                     literature from 45 BC, making it over 2000 years old.
                     `
                 },
-                {
-                    name:"Prabhat Pandey",
-                    position:"CEO",
-                    desc:"Yep! totally the best company out there hands down. 420/69"
-                },
 
             ]
         };
@@ -47,7 +42,7 @@ export default class Services extends Component {
 
     render() {
         return (
-            <section className="project">
+            <section className="testimonials">
                 <div className="sec-desc">
                     <h1>Talk to us <span className="highlight"> Directly</span>!</h1>
                     <p className="txt">You can call us or shoot us a quick message!
@@ -64,11 +59,11 @@ export default class Services extends Component {
                     {
                         this.state.testimonials.map((c)=>{
                             return (
-                                <div className="service-card" key={c.title}>
+                                <div className="service-card" key={c.name}>
                                     <h3>
                                         {c.name}
                                     </h3>
-                            <   div className="txt">{c.position}</div>
+                            <   div className="txt" style={{opacity:'50%'}}>{c.position}</div>
                                     <p className="txt">
                                         {c.desc}
                                     </p>
@@ -81,11 +76,11 @@ export default class Services extends Component {
                     {
                         this.state.testimonials.map((c)=>{
                             return (
-                                <div className="service-card" key={c.title}>
+                                <div className="service-card" key={c.name}>
                                     <h3>
                                         {c.name}
                                     </h3>
-                            <   div className="txt">{c.position}</div>
+                                    <div className="txt" style={{opacity:'50%'}}>{c.position}</div>
                                     <p className="txt">
                                         {c.desc}
                                     </p>

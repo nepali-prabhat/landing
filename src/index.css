@@ -95,7 +95,7 @@ h3{
 }
 .txt{
   line-height: 35px;
-  font-size: 1rem;
+  font-size: 1em;
 }
 .highlight{
   color: var(--primary);
@@ -152,7 +152,12 @@ input:focus{
 }
 @media screen and (min-width: 999px) {
   body{
-    font-size: 20px;
+    /* font-size: 20px; */
     
+  }
+}
+@media screen and (max-width: 999px) {
+  body{
+    font-size: 14px;
   }
 }

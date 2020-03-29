@@ -95,14 +95,14 @@ something new and fresh!
                             <h2>
                                 {this.state.tabs[this.state.activeIndex].title}
                             </h2>
-                            <p className="txt">
+                            <div className="txt">
                                 {this.state.tabs[this.state.activeIndex].desc}
                                 <ol className="projects-list">
                                     {
-                                        this.state.tabs[this.state.activeIndex].lists.map((l)=>( <li className="txt">{l}</li> ))
+                                        this.state.tabs[this.state.activeIndex].lists.map((l,i)=>( <li key={l+i} className="txt">{l}</li> ))
                                     }
                                 </ol>
-                            </p>
+                            </div>
                         </div>
                         <div className="d-flex">
                             <img className="project-img" src={this.state.tabs[this.state.activeIndex].src} alt={this.state.tabs[this.state.activeIndex].title}/>

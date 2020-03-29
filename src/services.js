@@ -117,14 +117,16 @@ export default class Services extends Component {
     handleTabClick(i){
         this.setState({activeIndex:i, manuallyClicked:true})
     }
-
+    handleCardClick = ()=>{
+        this.setState({manuallyClicked:true})
+    }
     componentDidMount(){
         this.interval = setInterval(()=>{
-                // if(!this.state.manuallyClicked){
-                //     this.setState({activeIndex:(this.state.activeIndex+1)%this.state.tabs.length})
-                // }else{
-                //     this.setState({manuallyClicked:false})
-                // }
+                if(!this.state.manuallyClicked){
+                    this.setState({activeIndex:(this.state.activeIndex+1)%this.state.tabs.length})
+                }else{
+                    this.setState({manuallyClicked:false})
+                }
             },4000
         )
     }
@@ -158,7 +160,7 @@ export default class Services extends Component {
                             <img className="service-img" src={this.state.tabs[this.state.activeIndex].src} alt={this.state.tabs[this.state.activeIndex].title}/>
                         </div>
                 </div>
-                <Carousel showStatus={false} className="service-card-container" centerMode useKeyboardArrows centerSlidePercentage={50} showThumbs={false} emulateTouch>
+                <Carousel onClickItem={()=>this.handleCardClick()} onClickThumb={()=>this.handleCardClick()} showStatus={false} className="service-card-container" centerMode useKeyboardArrows centerSlidePercentage={50} showThumbs={false} emulateTouch>
                     {
                         this.state.tabs[this.state.activeIndex].cards.map((c)=>{
                             return (
@@ -177,9 +179,9 @@ export default class Services extends Component {
                 </Carousel>
                 <div className="mobile-service-list">
                     {
-                        this.state.tabs[this.state.activeIndex].cards.map((c)=>{
+                        this.state.tabs[this.state.activeIndex].cards.map((c,i)=>{
                             return (
-                                <div className="service-card" key={c.title}>
+                                <div className="service-card" key={"mobile-"+c.title+'-'+i}>
                                     <h3>
                                         {c.title}
                                     </h3>

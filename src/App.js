@@ -4,6 +4,8 @@ import heroImg from './hero.svg';
 import Services from './services';
 import Projects from './projects';
 import Testimonial from './testemonials';
+import {useScreenSize} from './useScreenSize';
+
 const LearnMore = ()=><div className="link highlight">Learn More</div>
 function App() {
   const noticeTitle = "Somtu SMS is here!"
@@ -11,8 +13,14 @@ function App() {
   School Management system. has been released.
   School Management system. has been released.`
   const [email, setEmail] = React.useState("");
+  const size = useScreenSize();
+  let transform = 0;
+  console.log({size});
+  if(size.width<450){
+    transform = (450-size.width)/2;
+  }
   return (
-    <div className="App">
+    <div className="App" style={{transform:`translateX(${transform}px)`}}>
       <nav>
         <span className="logo">
           Pegcore
@@ -48,7 +56,7 @@ function App() {
           <div className="notice-img"></div>
           <div className="notice-desc">
             <h3>{noticeTitle}</h3>
-            <div className="txt">{noticeDesc}</div>
+            <p className="txt">{noticeDesc}</p>
             <LearnMore/>
           </div>
         </div>
@@ -57,7 +65,7 @@ function App() {
         <div className="notice-img"></div>
         <div className="notice-desc">
           <h3>{noticeTitle}</h3>
-          <div className="txt">{noticeDesc}</div>
+          <p className="txt">{noticeDesc}</p>
           <LearnMore/>
         </div>
       </section>

@@ -96,7 +96,7 @@ nav ul li{
   width: 50%;
 }
 .hero .hero-img{
-  width: 600px;
+  max-width: 600px;
 }
 
 @media screen and (min-width: 1600px) {
@@ -130,7 +130,7 @@ nav ul li{
     padding: 0;
   }
   .hero .info{
-    width: 500px;
+    max-width: 400px;
     gap: 30px;
     justify-content: center;
   }
@@ -277,6 +277,7 @@ nav ul li{
   justify-content: center;
   align-items: center;
 }
+
 .service-card{
   background-color: white;
   border: 2px solid var(--primary);
@@ -326,6 +327,9 @@ nav ul li{
 .mobile-service-list{
   display: none;
 }
+.testimonials{
+  margin-top: 0px;
+}
 @media screen and (max-width: 1400px) {
   .service-card p{
     margin-top: 10px;
@@ -371,7 +375,7 @@ nav ul li{
   .mobile-service-list{
     display: grid;
     gap: 40px;
-    width: 400px;
+    max-width: 400px;
     margin: 0 auto;
     padding-top: 60px;
   }
@@ -403,10 +407,28 @@ nav ul li{
 
 
 @media screen and (max-width:600px){
+  .App{
+    width: 100% !important;
+    position: relative;
+    left:0;
+  }
   .info{
-    width:350px !important;
+    width:320px !important;
+  }
+  p{
+    max-width: 320px !important;
   }
   .slideshow-tabs{
     min-width: 100% !important;
   }
+  .service-card{
+
+  }
+  .content-desc div{
+    max-width: 320px !important;
+  }
+  .sec-desc{
+    /* width: 320px !important; */
+  }
+  
 }
