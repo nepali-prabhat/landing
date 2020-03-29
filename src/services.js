@@ -1,7 +1,67 @@
 import React, { Component } from 'react'
 import { Carousel } from 'react-responsive-carousel';
 import AI from './ai.svg';
+import TransitionGroupPlus from 'react-transition-group-plus';
+import { TimelineLite, CSSPlugin } from "gsap/all";
+
 const LearnMore = ()=><div className="link highlight">Learn More</div>
+
+class ServiceDesc extends Component{
+    title = null
+    desc = null
+    img = null
+    plugin = CSSPlugin
+    componentWillEnter(callback){
+        console.log("entering",this.props.service.title)
+        const tl = new TimelineLite({paused: false, onComplete:callback});
+        tl.from(this.title, {y:-20, opacity:0})
+        // tl.play();
+        // callback();
+    }
+    componentWillLeave(callback){
+        console.log("leaving", this.props.service.title)
+        const tl = new TimelineLite({paused: false, onComplete:callback});
+        tl.to(this.title, {opacity:0})
+        // callback();
+    }
+    render(){
+        return(
+            <div style={{position:'absolute', top:'0', left:'0', right:'0'}}>
+                <div className="content-container">
+                            <div className="content-desc">
+                                <h2 ref={r=>this.title = r}>
+                                    {this.props.service.title}
+                                </h2>
+                                <p className="txt" ref={r=>this.desc = r}>
+                                    {this.props.service.desc}
+                                </p>
+                            </div>
+                            <div className="service-img-container">
+                                <img ref={r=>this.img = r} className="service-img" src={this.props.service.src} alt={this.props.service.title}/>
+                            </div>
+                    </div>
+                <Carousel onClickItem={()=>this.props.handleCardClick()} onClickThumb={()=>this.props.handleCardClick()} showStatus={false} className="service-card-container" centerMode useKeyboardArrows centerSlidePercentage={50} showThumbs={false} emulateTouch>
+                {
+                    this.props.service.cards.map((c)=>{
+                        return (
+                            <div className="service-card" key={c.title}>
+                                <h3>
+                                    {c.title}
+                                </h3>
+                                <p className="txt">
+                                    {c.desc}
+                                </p>
+                                <LearnMore />
+                            </div>
+                        )
+                    })
+                }
+                </Carousel>
+            </div>
+        )
+    }
+}
+
 export default class Services extends Component {
     constructor(props) {
         super(props);
@@ -147,7 +207,16 @@ export default class Services extends Component {
                         }
                     </ul>
                 </div>
-                <div className="content-container">
+                <div style={{position: 'relative'}}>
+                    <TransitionGroupPlus>
+                        {
+                            this.state.tabs.map((t,i)=>{
+                                return this.state.activeIndex === i?(<ServiceDesc handleCardClick={this.handleCardClick} service={this.state.tabs[i]}/>):null 
+                            })
+                        }
+                    </TransitionGroupPlus>
+                </div>
+                {/* <div className="content-container">
                         <div className="content-desc">
                             <h2>
                                 {this.state.tabs[this.state.activeIndex].title}
@@ -159,24 +228,7 @@ export default class Services extends Component {
                         <div className="service-img-container">
                             <img className="service-img" src={this.state.tabs[this.state.activeIndex].src} alt={this.state.tabs[this.state.activeIndex].title}/>
                         </div>
-                </div>
-                <Carousel onClickItem={()=>this.handleCardClick()} onClickThumb={()=>this.handleCardClick()} showStatus={false} className="service-card-container" centerMode useKeyboardArrows centerSlidePercentage={50} showThumbs={false} emulateTouch>
-                    {
-                        this.state.tabs[this.state.activeIndex].cards.map((c)=>{
-                            return (
-                                <div className="service-card" key={c.title}>
-                                    <h3>
-                                        {c.title}
-                                    </h3>
-                                    <p className="txt">
-                                        {c.desc}
-                                    </p>
-                                    <LearnMore />
-                                </div>
-                            )
-                        })
-                    }
-                </Carousel>
+                </div> */}
                 <div className="mobile-service-list">
                     {
                         this.state.tabs[this.state.activeIndex].cards.map((c,i)=>{
