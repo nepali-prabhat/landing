@@ -265,8 +265,12 @@ nav ul li{
 .content-desc p{
   margin-top: calc(var(--gap) - 10px);
 }
+.content-desc > *{
+  opacity: 0;
+}
 .service-img-container{
   margin: 0 auto;
+  opacity: 0;
 }
 .service-img{
   width:250px;

@@ -1,28 +1,33 @@
 import React, { Component } from 'react'
 import { Carousel } from 'react-responsive-carousel';
 import AI from './ai.svg';
+import BitCoin from './bitcoin.svg';
+import IoT from './iot.svg';
 import TransitionGroupPlus from 'react-transition-group-plus';
 import { TimelineLite, CSSPlugin } from "gsap/all";
 
 const LearnMore = ()=><div className="link highlight">Learn More</div>
 
 class ServiceDesc extends Component{
-    title = null
-    desc = null
-    img = null
-    plugin = CSSPlugin
+    constructor(props){
+        super(props)
+        this.title = null
+        this.desc = null
+        this.img = null
+        this.plugin = CSSPlugin
+
+    }
     componentWillEnter(callback){
         console.log("entering",this.props.service.title)
         const tl = new TimelineLite({paused: false, onComplete:callback});
-        tl.from(this.title, {y:-20, opacity:0})
+        tl.staggerTo([this.title, this.img, this.desc], 0.4, {opacity:1},0.3);
         // tl.play();
         // callback();
     }
     componentWillLeave(callback){
         console.log("leaving", this.props.service.title)
         const tl = new TimelineLite({paused: false, onComplete:callback});
-        tl.to(this.title, {opacity:0})
-        // callback();
+        tl.staggerTo([this.title, this.img, this.desc], 0.4,{opacity:0},0.3)
     }
     render(){
         return(
@@ -36,8 +41,8 @@ class ServiceDesc extends Component{
                                     {this.props.service.desc}
                                 </p>
                             </div>
-                            <div className="service-img-container">
-                                <img ref={r=>this.img = r} className="service-img" src={this.props.service.src} alt={this.props.service.title}/>
+                            <div ref={r=>this.img = r} className="service-img-container">
+                                <img className="service-img" src={this.props.service.src} alt={this.props.service.title}/>
                             </div>
                     </div>
                 <Carousel onClickItem={()=>this.props.handleCardClick()} onClickThumb={()=>this.props.handleCardClick()} showStatus={false} className="service-card-container" centerMode useKeyboardArrows centerSlidePercentage={50} showThumbs={false} emulateTouch>
@@ -70,9 +75,9 @@ export default class Services extends Component {
             activeIndex:0,
             tabs:[{
                 title:"Artificial Intelligence",
-                desc:`Is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's stdard dummy text ever since
-                the 1500s, when an unknown printer.
+                desc:`I's stdard dummy text ever since
+                the 1500s, when an unknown printer.s simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry
                 `,
                 src:AI,
                 cards:[
@@ -109,16 +114,16 @@ export default class Services extends Component {
             },
             {
                 title:"Blockchain",
-                desc:`Is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's stdard dummy text ever since
-                the 1500s, when an unknown printer.
+                desc:`Simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industryprinting and typesetting industry.
+                Lorem Ipsum has been the industry00s, when an unknown printer.
                 `,
-                src:AI,
+                src:BitCoin,
                 cards:[
                     {
                         title: "Pattern ",
-                        desc:`A powerful dual-perspective from two MIT schools – the
-                        MIT Sloan School of MIT Computer Science and Artificial
+                        desc:`A s simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has been the industryComputer Science and Artificial
                         Intelligence Laboratory understanding of AI.
                         `,
                     },
@@ -141,11 +146,11 @@ export default class Services extends Component {
             },
             {
                 title:"Internet of Things",
-                desc:`Is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's stdard dummy text ever since
+                desc:`Contrary to popular belief, Lorem Ipsum is not simply
+                random text. It hae industry's stdard dummy text ever since
                 the 1500s, when an unknown printer.
                 `,
-                src:AI,
+                src:IoT,
                 cards:[
                     {
                         title: "Hepatitis",
@@ -208,10 +213,10 @@ export default class Services extends Component {
                     </ul>
                 </div>
                 <div style={{position: 'relative'}}>
-                    <TransitionGroupPlus>
+                    <TransitionGroupPlus transitionMode="out-in">
                         {
                             this.state.tabs.map((t,i)=>{
-                                return this.state.activeIndex === i?(<ServiceDesc handleCardClick={this.handleCardClick} service={this.state.tabs[i]}/>):null 
+                                return this.state.activeIndex === i?(<ServiceDesc key={"desc-container-"+t.title} handleCardClick={this.handleCardClick} service={this.state.tabs[i]}/>):null 
                             })
                         }
                     </TransitionGroupPlus>
