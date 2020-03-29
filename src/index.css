@@ -26,6 +26,9 @@ body {
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
 
 .link{
@@ -150,8 +153,6 @@ input:focus{
 @media screen and (min-width: 999px) {
   body{
     font-size: 20px;
-    display: grid;
-    justify-content: center;
-    align-items: center;
+    
   }
 }

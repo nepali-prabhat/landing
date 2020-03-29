@@ -72,7 +72,8 @@ export default class Services extends Component {
                     {
                         title: "Natural Language Processing",
                         desc:`It has roots in a piece of classical Latin
-                        literature from 45 BC, making  Computer Science and Artificial
+                        literature from 45 BC,   has roots in a piece of classical Latin
+                        literature from 45 BC,making  Computer Science and Artificial
                         Intelligence Laboratory understand.
                         `,
                     },
@@ -119,11 +120,11 @@ export default class Services extends Component {
 
     componentDidMount(){
         this.interval = setInterval(()=>{
-                if(!this.state.manuallyClicked){
-                    this.setState({activeIndex:(this.state.activeIndex+1)%this.state.tabs.length})
-                }else{
-                    this.setState({manuallyClicked:false})
-                }
+                // if(!this.state.manuallyClicked){
+                //     this.setState({activeIndex:(this.state.activeIndex+1)%this.state.tabs.length})
+                // }else{
+                //     this.setState({manuallyClicked:false})
+                // }
             },4000
         )
     }
@@ -174,6 +175,24 @@ export default class Services extends Component {
                         })
                     }
                 </Carousel>
+                <div className="mobile-service-list">
+                    {
+                        this.state.tabs[this.state.activeIndex].cards.map((c)=>{
+                            return (
+                                <div className="service-card" key={c.title}>
+                                    <h3>
+                                        {c.title}
+                                    </h3>
+                                    <p className="txt">
+                                        {c.desc}
+                                    </p>
+                                    <LearnMore />
+                                </div>
+                            )
+                        })
+                    }
+                </div>
+                
             </section>
         )
     }
