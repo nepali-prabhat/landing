@@ -6,6 +6,7 @@ import Projects from './projects';
 import Testimonial from './testemonials';
 import {useScreenSize} from './useScreenSize';
 import LearnMore from './LearnMore';
+import { Link, animateScroll as scroll } from "react-scroll";
 
 function App() {
   const noticeTitle = "Somtu SMS is here!"
@@ -27,9 +28,13 @@ function App() {
         </span>
         {/* <div className="d-flex"> */}
           <ul>
-            <li className="link">Home</li>
+            {/* <li className="link">Home</li>
             <li className="link">Services</li>
-            <li className="link">Projects</li>
+            <li className="link">Projects</li> */}
+
+            <li><Link to="hero" className="link">Home</Link></li>
+            <li><Link to="services" className="link">Services</Link></li>
+            <li><Link to="project" className="link">Projects</Link></li>
           </ul>
           <div className="group">
             <button >Request Demo</button>
