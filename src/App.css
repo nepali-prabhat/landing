@@ -76,6 +76,7 @@ nav ul li{
   text-align: center;
 }
 .App .hero{
+  position: relative;
   height: 100vh;
   min-height: 800px;
   padding-top: 80px;
@@ -84,7 +85,6 @@ nav ul li{
   align-items: center;
   justify-content: space-between;
   transform: translateY(-100px);
-  position: relative;
 }
 .hero .info{
   max-width: 550px;
@@ -249,6 +249,14 @@ nav ul li{
 .active-tab{
   color: var(--primary);
   list-style: disc !important;
+  transition: all 1000 ease-out;
+  font-size: 1.1em;
+}
+.inactive-tab{
+  transition: all 500 ease-out;
+}
+.inactive-tab:hover{
+  font-size: 0.95em;
 }
 .content-container{
   display: flex;
@@ -274,6 +282,9 @@ nav ul li{
 }
 .service-img{
   width:200px;
+}
+.service-img:hover{
+  transform: translateY(-5px);
 }
 
 .service-card-container{
@@ -333,10 +344,15 @@ nav ul li{
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  transition: all 500 ease-out;
 }
 .project-img{
   width: 550px;
 }
+.project-img-container:hover{
+  transform: translateY(-5px);
+}
+
 .mobile-service-list{
   display: none;
 }

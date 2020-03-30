@@ -31,13 +31,36 @@ body {
   align-items: center;
 }
 
+.learnmore{
+  position: relative;
+}
+.learnmore:hover{
+  transition: all 1000 ease-out;
+  font-size: 1em;
+}
+.arrow-small{
+  width: 2.5%;
+  margin-left: 8px;
+  transform: translateY(2px);
+}
+.arrow-small path{
+  fill: var(--primary)
+}
+.arrow{
+  width: 4%;
+  margin-left: 4px;
+  transform: translateY(4px);
+}
+.learnmore:hover .arrow{
+  /* margin-left: 10px; */
+}
+.arrow path{
+  fill: var(--primary)
+}
 .link{
   font-weight: 400;
   cursor: pointer;
   font-size: 0.9rem;
-}
-.link:hover{
-  /* text-decoration: underline; */
 }
 button{
   height: 40px;

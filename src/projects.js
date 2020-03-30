@@ -4,8 +4,6 @@ import TransitionGroupPlus from 'react-transition-group-plus';
 import { TimelineLite, CSSPlugin } from "gsap/all";
 import {projects} from './data';
 
-
-const LearnMore = ()=><div className="link highlight">Learn More</div>
 class ProjectDesc extends Component {
     constructor(props){
         super(props)
@@ -18,7 +16,7 @@ class ProjectDesc extends Component {
         const tl = new TimelineLite({paused: false, onComplete:callback});
         tl.staggerFrom([this.title, this.desc], 0.5, {autoAlpha:0.5, y: 15},0.1,"label1")
         tl.staggerFrom(".pl", 0.5, {autoAlpha:1, y:10},0.1,'-=0.9')
-        tl.staggerFrom(this.img, 1, {autoAlpha:0.8, y:15},0,'-=1')
+        tl.staggerFrom(this.img, 1, {autoAlpha:0.8, y:25},0,'-=1')
     }
     render(){
         return(
@@ -82,7 +80,7 @@ something new and fresh!
                 <div className="tabs-container">
                     <ul className="slideshow-tabs">
                         {
-                            this.state.tabs.map((t,i)=><li key={t.title} onClick={()=>{this.handleTabClick(i)}} className={`link ${this.state.activeIndex===i?"active-tab":""}`}>{t.title}</li>)
+                            this.state.tabs.map((t,i)=><li key={t.title} onClick={()=>{this.handleTabClick(i)}} className={`link ${this.state.activeIndex===i?"active-tab":"inactive-tab"}`}>{t.title}</li>)
                         }
                     </ul>
                 </div>

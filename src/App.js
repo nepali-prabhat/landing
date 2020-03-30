@@ -5,8 +5,8 @@ import Services from './services';
 import Projects from './projects';
 import Testimonial from './testemonials';
 import {useScreenSize} from './useScreenSize';
+import LearnMore from './LearnMore';
 
-const LearnMore = ()=><div className="link highlight">Learn More</div>
 function App() {
   const noticeTitle = "Somtu SMS is here!"
   const noticeDesc = `Our latest project Somtu, 
@@ -34,6 +34,7 @@ function App() {
           <div className="group">
             <button >Request Demo</button>
             <button className="outline">Get Started</button>
+
           </div>
         {/* </div> */}
       </nav>
@@ -57,7 +58,7 @@ function App() {
           <div className="notice-desc">
             <h3>{noticeTitle}</h3>
             <p className="txt">{noticeDesc}</p>
-            <LearnMore/>
+            <LearnMore small={false}/>
           </div>
         </div>
       </section>
@@ -66,7 +67,7 @@ function App() {
         <div className="notice-desc">
           <h3>{noticeTitle}</h3>
           <p className="txt">{noticeDesc}</p>
-          <LearnMore/>
+          <LearnMore small={true}/>
         </div>
       </section>
       <Services />

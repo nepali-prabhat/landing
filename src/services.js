@@ -4,8 +4,7 @@ import { Carousel } from 'react-responsive-carousel';
 import TransitionGroupPlus from 'react-transition-group-plus';
 import { TimelineLite, CSSPlugin } from "gsap/all";
 import {services} from './data';
-
-const LearnMore = ()=><div className="link highlight">Learn More</div>
+import LearnMore from './LearnMore';
 
 class ServiceDesc extends Component{
     constructor(props){
@@ -62,7 +61,7 @@ class ServiceDesc extends Component{
                                                 {c.desc}
                                             </p>
                                             <div className="lm">
-                                                <LearnMore />
+                                                <LearnMore small={true}/>
                                             </div>
                                         </div>
                                     )
@@ -95,7 +94,7 @@ export default ()=> {
                 <div className="tabs-container">
                     <ul className="slideshow-tabs">
                         {
-                            state.tabs.map((t,i)=><li key={t.title} onClick={()=>{handleTabClick(i)}} className={`link ${state.activeIndex===i?"active-tab":""}`}>{t.title}</li>)
+                            state.tabs.map((t,i)=><li key={t.title} onClick={()=>{handleTabClick(i)}} className={`link ${state.activeIndex===i?"active-tab":"inactive-tab"}`}>{t.title}</li>)
                         }
                     </ul>
                 </div>
