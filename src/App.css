@@ -170,6 +170,7 @@ nav ul li{
 .notice-img{
   width: 140px;
   height: 140px;
+  border-radius: 40px;
   background: var(--primary3);
 }
 .notice-desc{
@@ -323,13 +324,11 @@ nav ul li{
   background-color: white !important;
 }
 
-
 .pd{
   margin-top: calc(var(--gap) - 10px);
 }
 .project{
   min-height: 100vh;
-  margin-bottom: 80px;
 }
 .projects-list{
   margin-top: calc(var(--gap) - 10px);
