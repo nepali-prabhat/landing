@@ -1,27 +1,26 @@
 import React from 'react';
 import './App.css';
-import heroImg from './hero.svg';
 import Services from './services';
 import Projects from './projects';
 import Testimonial from './testemonials';
 import {useScreenSize} from './useScreenSize';
 import LearnMore from './LearnMore';
 import { Link, animateScroll as scroll } from "react-scroll";
+import Hero from './hero';
 
 function App() {
   const noticeTitle = "Somtu SMS is here!"
   const noticeDesc = `Our latest project Somtu, 
   School Management system. has been released.
   School Management system. has been released.`
-  const [email, setEmail] = React.useState("");
   const size = useScreenSize();
   let transform = 0;
-  console.log({size});
   if(size.width<450){
     transform = (450-size.width)/2;
   }
+  // style={{transform:`translateX(${transform}px)`}}
   return (
-    <div className="App" style={{transform:`translateX(${transform}px)`}}>
+    <div className="App" >
       <nav>
         <span className="logo">
           Pegcore
@@ -31,11 +30,10 @@ function App() {
             {/* <li className="link">Home</li>
             <li className="link">Services</li>
             <li className="link">Projects</li> */}
-
             <li><Link to="hero" smooth={true} spy={true} className="link">Home</Link></li>
-            <li><Link to="services" offset={40} smooth={true} spy={true} className="link">Services</Link></li>
-            <li><Link to="project" spy={true} offset={40} smooth={true} className="link">Projects</Link></li>
-            <li><Link to="testimonials" spy={true} offset={40} smooth={true} className="link">Contact</Link></li>
+            <li><Link to="services" offset={60} smooth={true} spy={true} className="link">Services</Link></li>
+            <li><Link to="project" spy={true} offset={60} smooth={true} className="link">Projects</Link></li>
+            <li><Link to="testimonials" spy={true} offset={60} smooth={true} className="link">Contact</Link></li>
           </ul>
           <div className="group">
             <button >Request Demo</button>
@@ -44,30 +42,7 @@ function App() {
           </div>
         {/* </div> */}
       </nav>
-      <section className="hero">
-        <div className="info">
-            <h1>
-              You want to build. We want to 
-              <span className="highlight"> help.</span>
-            </h1>
-            <p className="txt">
-              Manage your projects, resources, and financials on one open, easy-to-use platform—designed for how you actually build.
-            </p>
-            <div className="hero-contact">
-              <input name="email" value={email} placeholder="Email" onChange={(e)=>{setEmail(e.target.value)}}/>
-              <button className="first-btn">Get Started</button>
-            </div>
-        </div>
-        <img className="hero-img" src={heroImg} alt="Pegcore main attraction" />
-        <div className="notice">
-          <div className="notice-img"></div>
-          <div className="notice-desc">
-            <h3>{noticeTitle}</h3>
-            <p className="txt">{noticeDesc}</p>
-            <LearnMore small={false}/>
-          </div>
-        </div>
-      </section>
+      <Hero/>
       <section className="notice-section">
         <div className="notice-img"></div>
         <div className="notice-desc">

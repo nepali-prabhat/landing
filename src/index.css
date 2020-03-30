@@ -6,8 +6,8 @@
   --primary2 : #ffe99f;
   --primary3: #fff4cf;
 
-  --shadow1: 0px 0px 12px -4px rgba(50, 50, 50, 0.75);
-  --shadow2: 0px 0px 12px -8px inset rgba(50, 50, 50, 0.75);
+  --shadow1: 0px 0px 12px -4px #d1a400;
+  --shadow2: 0px 0px 12px -8px inset #d1ab21;
 
   --gap: 20px;
 }
