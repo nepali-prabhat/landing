@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import { Carousel } from 'react-responsive-carousel';
-import AI from './ai.svg';
-import BitCoin from './bitcoin.svg';
-import IoT from './iot.svg';
+
 import TransitionGroupPlus from 'react-transition-group-plus';
 import { TimelineLite, CSSPlugin } from "gsap/all";
+import {services} from './data';
 
 const LearnMore = ()=><div className="link highlight">Learn More</div>
 
@@ -15,24 +14,29 @@ class ServiceDesc extends Component{
         this.desc = null
         this.img = null
         this.plugin = CSSPlugin
-
+    }
+    componentDidMount(){
     }
     componentWillEnter(callback){
         console.log("entering",this.props.service.title)
         const tl = new TimelineLite({paused: false, onComplete:callback});
-        tl.staggerTo([this.title, this.img, this.desc], 0.4, {opacity:1},0.3);
-        // tl.play();
-        // callback();
+        tl.staggerFrom([this.title, this.desc, this.img], 0.5, {autoAlpha:0.5, y: 15},0.1,"label1")
+        tl.staggerFrom(".sc", 0.5, {autoAlpha:1, y:15},0.1,'-=1')
+        tl.staggerFrom(".ch", 0.5, {autoAlpha:0.75, y:5},0.1,'-=1')
+        tl.staggerFrom(".cd", 0.5, {autoAlpha:0.75, y:5},0,'-=1')
+        tl.staggerFrom(".lm", 0.45, {autoAlpha:0.75, y:5},0,'-=1')
+        // !this.props.left && tl.from(this.container, 0.5, {autoAlpha:0, y: 15})
     }
-    componentWillLeave(callback){
-        console.log("leaving", this.props.service.title)
-        const tl = new TimelineLite({paused: false, onComplete:callback});
-        tl.staggerTo([this.title, this.img, this.desc], 0.4,{opacity:0},0.3)
-    }
+    // componentWillLeave(callback){
+    //     console.log("leaving", this.props.service.title)
+    //     const tl = new TimelineLite({paused: false, onComplete:callback});
+    //     this.props.left && tl.to(this.container, 0.5, {autoAlpha:0, x: 15})
+    //     !this.props.left && tl.to(this.container, 0.5, {autoAlpha:0, x: -15})
+    // }
     render(){
         return(
-            <div style={{position:'absolute', top:'0', left:'0', right:'0'}}>
-                <div className="content-container">
+            <div >
+                <div className="content-container" >
                             <div className="content-desc">
                                 <h2 ref={r=>this.title = r}>
                                     {this.props.service.title}
@@ -45,160 +49,43 @@ class ServiceDesc extends Component{
                                 <img className="service-img" src={this.props.service.src} alt={this.props.service.title}/>
                             </div>
                     </div>
-                <Carousel onClickItem={()=>this.props.handleCardClick()} onClickThumb={()=>this.props.handleCardClick()} showStatus={false} className="service-card-container" centerMode useKeyboardArrows centerSlidePercentage={50} showThumbs={false} emulateTouch>
-                {
-                    this.props.service.cards.map((c)=>{
-                        return (
-                            <div className="service-card" key={c.title}>
-                                <h3>
-                                    {c.title}
-                                </h3>
-                                <p className="txt">
-                                    {c.desc}
-                                </p>
-                                <LearnMore />
-                            </div>
-                        )
-                    })
-                }
-                </Carousel>
+                    <div >
+                        <Carousel showStatus={false} className="service-card-container" centerMode useKeyboardArrows centerSlidePercentage={50} showThumbs={false} emulateTouch>
+                            {
+                                this.props.service.cards.map((c)=>{
+                                    return (
+                                        <div className="service-card sc" key={c.title}>
+                                            <h3 className="ch">
+                                                {c.title}
+                                            </h3>
+                                            <p className="txt cd">
+                                                {c.desc}
+                                            </p>
+                                            <div className="lm">
+                                                <LearnMore />
+                                            </div>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </Carousel>
+                    </div>
             </div>
         )
     }
 }
 
-export default class Services extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            manuallyClicked:false,
-            activeIndex:0,
-            tabs:[{
-                title:"Artificial Intelligence",
-                desc:`I's stdard dummy text ever since
-                the 1500s, when an unknown printer.s simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry
-                `,
-                src:AI,
-                cards:[
-                    {
-                        title: "Analytics",
-                        desc:`Contrary to popular belief, Lorem Ipsum is not simply
-                        random text. It has roots in a piece of classical Latin
-                        literature from 45 BC, making it over 2000 years old.
-                        `,
-                    },
-                    {
-                        title: "Pattern Recognition",
-                        desc:`A powerful dual-perspective from two MIT schools – the
-                        MIT Sloan School of MIT Computer Science and Artificial
-                        Intelligence Laboratory understanding of AI.
-                        `,
-                    },
-                    {
-                        title: "Natural Language Processing",
-                        desc:`It has roots in a piece of classical Latin
-                        literature from 45 BC, making  Computer Science and Artificial
-                        Intelligence Laboratory understand.
-                        `,
-                    },
-                    {
-                        title: "Natural Language Processing",
-                        desc:`It has roots in a piece of classical Latin
-                        literature from 45 BC, making  Computer Science and Artificial
-                        Intelligence Laboratory understand.
-                        `,
-                    },
-
-                ]
-            },
-            {
-                title:"Blockchain",
-                desc:`Simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industryprinting and typesetting industry.
-                Lorem Ipsum has been the industry00s, when an unknown printer.
-                `,
-                src:BitCoin,
-                cards:[
-                    {
-                        title: "Pattern ",
-                        desc:`A s simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industryComputer Science and Artificial
-                        Intelligence Laboratory understanding of AI.
-                        `,
-                    },
-                    {
-                        title: "Pattern Recognition",
-                        desc:`A powerful dual-perspective from two MIT schools – the
-                        MIT Sloan School of MIT Computer Science and Artificial
-                        Intelligence Laboratory understanding of AI.
-                        `,
-                    },
-                    {
-                        title: "Natural Language Processing",
-                        desc:`It has roots in a piece of classical Latin
-                        literature from 45 BC,   has roots in a piece of classical Latin
-                        literature from 45 BC,making  Computer Science and Artificial
-                        Intelligence Laboratory understand.
-                        `,
-                    },
-                ]
-            },
-            {
-                title:"Internet of Things",
-                desc:`Contrary to popular belief, Lorem Ipsum is not simply
-                random text. It hae industry's stdard dummy text ever since
-                the 1500s, when an unknown printer.
-                `,
-                src:IoT,
-                cards:[
-                    {
-                        title: "Hepatitis",
-                        desc:`Contrary to popular belief, Lorem Ipsum is not simply
-                        random text. It has roots in a piece of classical Latin
-                        literature from 45 BC, making it over 2000 years old.
-                        `,
-                    },
-                    {
-                        title: "Pattern Recognition",
-                        desc:`A powerful dual-perspective from two MIT schools – the
-                        MIT Sloan School of MIT Computer Science and Artificial
-                        Intelligence Laboratory understanding of AI.
-                        `,
-                    },
-                    {
-                        title: "Natural Language Processing",
-                        desc:`It has roots in a piece of classical Latin
-                        literature from 45 BC, making  Computer Science and Artificial
-                        Intelligence Laboratory understand.
-                        `,
-                    },
-                ]
-            }
-        ]
-        };
+export default ()=> {
+    const [state, setState] = React.useState({
+        activeIndex:0,
+        left:true,
+        tabs: services.tabs
+    }) 
+    let container = React.useRef(null);
+    const handleTabClick = (i)=>{
+        const left = i>state.activeIndex? true:false;
+        i!==state.activeIndex && setState({...state, activeIndex:i, left})
     }
-    interval = null;
-    handleTabClick(i){
-        this.setState({activeIndex:i, manuallyClicked:true})
-    }
-    handleCardClick = ()=>{
-        this.setState({manuallyClicked:true})
-    }
-    componentDidMount(){
-        this.interval = setInterval(()=>{
-                if(!this.state.manuallyClicked){
-                    this.setState({activeIndex:(this.state.activeIndex+1)%this.state.tabs.length})
-                }else{
-                    this.setState({manuallyClicked:false})
-                }
-            },4000
-        )
-    }
-    componentWillUnmount(){
-        clearInterval(this.interval)
-    }
-    render() {
         return (
             <section className="services">
                 <div className="sec-desc">
@@ -208,35 +95,52 @@ export default class Services extends Component {
                 <div className="tabs-container">
                     <ul className="slideshow-tabs">
                         {
-                            this.state.tabs.map((t,i)=><li key={t.title} onClick={()=>{this.handleTabClick(i)}} className={`link ${this.state.activeIndex===i?"active-tab":""}`}>{t.title}</li>)
+                            state.tabs.map((t,i)=><li key={t.title} onClick={()=>{handleTabClick(i)}} className={`link ${state.activeIndex===i?"active-tab":""}`}>{t.title}</li>)
                         }
                     </ul>
                 </div>
                 <div style={{position: 'relative'}}>
-                    <TransitionGroupPlus transitionMode="out-in">
+                    <TransitionGroupPlus>
                         {
-                            this.state.tabs.map((t,i)=>{
-                                return this.state.activeIndex === i?(<ServiceDesc key={"desc-container-"+t.title} handleCardClick={this.handleCardClick} service={this.state.tabs[i]}/>):null 
+                            state.tabs.map((t,i)=>{
+                                return state.activeIndex === i?(<ServiceDesc container={container} key={"desc-container-"+t.title} service={state.tabs[i]} left={state.left} />):null 
                             })
                         }
                     </TransitionGroupPlus>
+                    {/* <Carousel showStatus={false} className="service-card-container" centerMode useKeyboardArrows centerSlidePercentage={50} showThumbs={false} emulateTouch>
+                        {
+                            state.tabs[state.activeIndex].cards.map((c)=>{
+                                return (
+                                    <div className="service-card" key={c.title}>
+                                        <h3>
+                                            {c.title}
+                                        </h3>
+                                        <p className="txt">
+                                            {c.desc}
+                                        </p>
+                                        <LearnMore />
+                                    </div>
+                                )
+                            })
+                        }
+                    </Carousel> */}
                 </div>
                 {/* <div className="content-container">
                         <div className="content-desc">
                             <h2>
-                                {this.state.tabs[this.state.activeIndex].title}
+                                {state.tabs[state.activeIndex].title}
                             </h2>
                             <p className="txt">
-                                {this.state.tabs[this.state.activeIndex].desc}
+                                {state.tabs[state.activeIndex].desc}
                             </p>
                         </div>
                         <div className="service-img-container">
-                            <img className="service-img" src={this.state.tabs[this.state.activeIndex].src} alt={this.state.tabs[this.state.activeIndex].title}/>
+                            <img className="service-img" src={state.tabs[state.activeIndex].src} alt={this.state.tabs[this.state.activeIndex].title}/>
                         </div>
                 </div> */}
                 <div className="mobile-service-list">
                     {
-                        this.state.tabs[this.state.activeIndex].cards.map((c,i)=>{
+                        state.tabs[state.activeIndex].cards.map((c,i)=>{
                             return (
                                 <div className="service-card" key={"mobile-"+c.title+'-'+i}>
                                     <h3>
@@ -254,5 +158,4 @@ export default class Services extends Component {
                 
             </section>
         )
-    }
 }

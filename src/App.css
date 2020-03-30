@@ -266,14 +266,14 @@ nav ul li{
   margin-top: calc(var(--gap) - 10px);
 }
 .content-desc > *{
-  opacity: 0;
+  /* opacity: 0; */
 }
 .service-img-container{
   margin: 0 auto;
-  opacity: 0;
+  /* opacity: 0; */
 }
 .service-img{
-  width:250px;
+  width:200px;
 }
 
 .service-card-container{
@@ -313,6 +313,9 @@ nav ul li{
 }
 
 
+.pd{
+  margin-top: calc(var(--gap) - 10px);
+}
 .project{
   min-height: 100vh;
   margin-bottom: 80px;
@@ -327,7 +330,9 @@ nav ul li{
   line-height: 30px;
 }
 .project-img-container{
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 .project-img{
   width: 550px;
