@@ -157,3 +157,33 @@ export const projects = {
     }
 ]
 }
+
+export const testimonials=[
+    {
+        name:"Prabhat Pandey",
+        position:"CEO",
+        desc:`Yep! totally the best company out there hands down. 420/69. Contrary to popular belief, Lorem Ipsum is not simply
+        random text. It has roots in a piece of classical Latin
+        literature from 45 BC, making it over 2000 years old.
+        Lorem Ipsum is not simply random text. It has roots in a
+        piece of classical Latin literature from 45 BC, making it.
+        `
+    },
+    {
+        name:"Bijay Shrestha",
+        position:"CEO",
+        desc: `
+        Tts over 2000 years old. Lorem Ipsum is not simply
+        random text. It has roots in a piece of classical Latin
+        literature from 45 BC, making it over 2000 years old.`
+    },
+    {
+        name:"Karun Shrestha",
+        position:"CEO",
+        desc: `Yep! totally the best company out there hands down. 420/69.Tts over 2000 years old. Lorem Ipsum is not simply
+        random text. It has roots in a piece of classical Latin
+        literature from 45 BC, making it over 2000 years old.
+        `
+    },
+
+]

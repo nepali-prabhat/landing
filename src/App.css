@@ -44,11 +44,11 @@
 }
 @media screen and (max-width: 1000px){
   .App nav{
-    padding: 20px 40px;
   }
 }
-@media screen and (max-width: 860px){
+@media screen and (max-width: 1000px){
   .App nav{
+    padding: 20px 40px;
     display: grid;
     justify-content: center;
     gap: 12px;
@@ -79,12 +79,12 @@ nav ul li{
   position: relative;
   height: 100vh;
   min-height: 800px;
-  padding-top: 80px;
+  padding-top: 100px;
   display: grid;
   grid-auto-flow: column;
   align-items: center;
   justify-content: space-between;
-  transform: translateY(-100px);
+  transform: translateY(-120px);
 }
 .hero .info{
   max-width: 550px;
@@ -152,7 +152,7 @@ nav ul li{
 
 .notice{
   position: absolute;
-  bottom: 0;
+  bottom: -30px;
   left: calc(-2000px + 814px);
   border: 2px solid var(--primary);
   padding: 40px 80px;
@@ -253,10 +253,10 @@ nav ul li{
   font-size: 1.1em;
 }
 .inactive-tab{
-  transition: all 500 ease-out;
+  transition: all 50 ease-out;
 }
 .inactive-tab:hover{
-  font-size: 0.95em;
+  transform: scaleX(1.1);
 }
 .content-container{
   display: flex;
@@ -271,7 +271,7 @@ nav ul li{
 /* .content-desc h2{
 } */
 .content-desc p{
-  margin-top: calc(var(--gap) - 10px);
+  margin-top: 15px;
 }
 .content-desc > *{
   /* opacity: 0; */
@@ -303,7 +303,7 @@ nav ul li{
   border-radius: 40px;
   margin:  0 60px;
   margin-bottom: 40px;
-  padding: 50px 40px;
+  padding: 40px 50px;
   min-height: 250px;
   /* height: 100%; */
   min-width: 400px;
@@ -357,7 +357,30 @@ nav ul li{
   display: none;
 }
 .testimonials{
-  margin-top: 0px;
+  padding-top: 100px;
+  min-height: 100vh;
+}
+.rt-wrapper{
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-top: 80px;
+}
+.rt-attraction{
+  width: 200px;
+  text-align: center;
+}
+.rt-one{
+  font-size: 2.5rem;
+  text-align: center;
+}
+.rt-min{
+  font-size: 2rem;
+  text-align: center;
+}
+.rt-desc{
+  margin-top: 20px;
 }
 @media screen and (max-width: 1400px) {
   .service-card p{
@@ -459,5 +482,8 @@ nav ul li{
   .sec-desc{
     /* width: 320px !important; */
   }
-  
+  .rt-wrapper{
+    grid-auto-flow: row;
+    grid-gap: 20px;
+  }
 }
