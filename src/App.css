@@ -31,10 +31,10 @@
 }
 
 .App nav{
-  position: fixed;
+  position: sticky;
   top:0;
-  right: 0;
-  left: 0;
+  /* right: 0;
+  left: 0; */
   display: flex;
   justify-content: space-between;
   z-index: 1000;
@@ -78,9 +78,10 @@ nav ul li{
 .App .hero{
   position: relative;
   height: 100vh;
+  top:-150px;
   /* min-height: 800px; */
   /* padding-top: 100px; */
-  /* padding-bottom: 100x; */
+  /* padding-bottom: 400x; */
   display: grid;
   grid-auto-flow: column;
   align-items: center;
@@ -153,7 +154,7 @@ nav ul li{
 
 .notice{
   position: absolute;
-  bottom: 10px;
+  bottom: -40px;
   left: calc(-2000px + 814px);
   border: 2px solid var(--primary);
   padding: 40px 80px;
