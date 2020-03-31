@@ -36,7 +36,7 @@ function App() {
             <li className="link">Services</li>
             <li className="link">Projects</li> */}
             <li><Link to="hero" smooth={true} spy={true} className="link">Home</Link></li>
-            <li><Link to="services" offset={offset} smooth={true} spy={true} className="link">Services</Link></li>
+            <li><Link to="services" offset={offset- 120} smooth={true} spy={true} className="link">Services</Link></li>
             <li><Link to="project" spy={true} offset={offset} smooth={true} className="link">Projects</Link></li>
             <li><Link to="testimonials" spy={true} offset={offset} smooth={true} className="link">Contact</Link></li>
           </ul>

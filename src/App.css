@@ -78,7 +78,7 @@ nav ul li{
 .App .hero{
   position: relative;
   height: 100vh;
-  top:-150px;
+  /* top:-150px; */
   /* min-height: 800px; */
   /* padding-top: 100px; */
   /* padding-bottom: 400x; */
@@ -86,7 +86,7 @@ nav ul li{
   grid-auto-flow: column;
   align-items: center;
   justify-content: space-between;
-  /* transform: translateY(-100px); */
+  transform: translateY(-160px);
 }
 .hero .info{
   max-width: 550px;
@@ -100,7 +100,6 @@ nav ul li{
 .hero .hero-img{
   max-width: 600px;
 }
-
 @media screen and (min-width: 1600px) {
   .hero .hero-img{
     width: 550px;
@@ -127,7 +126,8 @@ nav ul li{
   .App .hero{
     grid-auto-flow: row;
     justify-content: center;
-    transform: translateY(0px);
+    /* top: -100px; */
+    transform: translateY(-120px);
     min-height: 600px;
     padding: 0;
   }
@@ -154,7 +154,7 @@ nav ul li{
 
 .notice{
   position: absolute;
-  bottom: -40px;
+  bottom: -55px;
   left: calc(-2000px + 814px);
   border: 2px solid var(--primary);
   padding: 40px 80px;
