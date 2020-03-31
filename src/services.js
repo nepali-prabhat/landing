@@ -68,7 +68,7 @@ class MobileServiceDesc extends Component{
     componentWillEnter(callback){
         console.log("entering",this.props.card.title)
         // const tl = new TimelineLite({paused: false, onComplete:callback});
-        // tl.staggerFrom([this.title, this.desc, this.img], 0.5, {autoAlpha:0.5, y: 15},0.1,"label1")
+        // tl.staggerFrom('.msc', 0.5, {autoAlpha:0.5, y: 15},0.1,"label1")
         // tl.staggerFrom(".sc", 0.5, {autoAlpha:1, y:15},0.1,'-=1')
         // tl.staggerFrom(".ch", 0.5, {autoAlpha:0.75, y:5},0.1,'-=1')
         // tl.staggerFrom(".cd", 0.5, {autoAlpha:0.75, y:5},0,'-=1')
@@ -77,15 +77,19 @@ class MobileServiceDesc extends Component{
     render(){
         return (
             <div className="mobile-service-list">
-                <div className="service-card" key={"mobile-"+this.props.card.title+'-'+this.props.i}>
-                    <h3>
-                        {this.props.card.title}
-                    </h3>
-                    <p className="txt">
-                        {this.props.card.desc}
-                    </p>
-                    <LearnMore />
-                </div>
+                {
+                    this.props.cards.map((c,i)=>(
+                        <div className="service-card msc" key={"mobile-"+c.title+'-'+i}>
+                            <h3 className="mst">
+                                {c.title}
+                            </h3>
+                            <p className="txt msd">
+                                {c.desc}
+                            </p>
+                            <LearnMore />
+                        </div>
+                    ))
+                }
             </div>
         )
     }
@@ -155,9 +159,7 @@ export default ()=> {
                 </div> */}
                 <TransitionGroupPlus>
                     {
-                        state.tabs[state.activeIndex].cards.map((c,i)=>(
-                            <MobileServiceDesc card={c} i={i}/>
-                        ))
+                        <MobileServiceDesc cards={state.tabs[state.activeIndex].cards} />
                     }
                 </TransitionGroupPlus>
             </section>
