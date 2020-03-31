@@ -27,7 +27,7 @@ class Hero extends React.Component{
     componentDidMount(){
         const tl = new TimelineMax({paused:false})
         tl.staggerFrom([this.dum, this.title, this.desc, this.email],0.5, { stagger:0.2, delay:0, ease:'sine.in' ,  autoAlpha:0, y:20})
-        tl.from('.notice', 0.5, { x:-500, autoAlpha:0, ease:'sine.in'},'-=0.2')
+        tl.from('.notice', 0.25, { x:-500, autoAlpha:0, ease:'sine.in'},'-=0.2')
     }
     render(){
         return(

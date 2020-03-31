@@ -19,11 +19,11 @@ function App() {
   //   transform = (450-size.width)/2;
   // }
   // style={{transform:`translateX(${transform}px)`}}
-  let offset = 0;
-  if(size.width<=1000){
-    offset = -37
-    console.log({offset,size})
-  }
+  let offset = 60;
+  // if(size.width<=1000){
+  //   offset = -37
+  //   console.log({offset,size})
+  // }
   return (
     <div className="App" >
       <nav>
@@ -36,7 +36,7 @@ function App() {
             <li className="link">Services</li>
             <li className="link">Projects</li> */}
             <li><Link to="hero" smooth={true} spy={true} className="link">Home</Link></li>
-            <li><Link to="services" offset={offset- 120} smooth={true} spy={true} className="link">Services</Link></li>
+            <li><Link to="services" offset={offset} smooth={true} spy={true} className="link">Services</Link></li>
             <li><Link to="project" spy={true} offset={offset} smooth={true} className="link">Projects</Link></li>
             <li><Link to="testimonials" spy={true} offset={offset} smooth={true} className="link">Contact</Link></li>
           </ul>
@@ -48,14 +48,13 @@ function App() {
         {/* </div> */}
       </nav>
       <Hero/>
-      {/* <section className="notice-section">
-        <div className="notice-img"></div>
+      <section className="notice-section">
         <div className="notice-desc">
           <h3>{noticeTitle}</h3>
           <p className="txt">{noticeDesc}</p>
           <LearnMore small={true}/>
         </div>
-      </section> */}
+      </section>
       <Services />
       <Projects />
       <Testimonial/>
