@@ -26,12 +26,8 @@ class Hero extends React.Component{
     }
     componentDidMount(){
         const tl = new TimelineMax({paused:false})
-        tl.staggerFrom([this.dum, this.title, this.desc, this.email],2, { stagger:0.3, delay:0, ease:'sine.in' ,  autoAlpha:0, y:20})
-        tl.from('.notice', 0.3, { x:-500, autoAlpha:0, ease:'sine.in'},'-=0.5')
-        // tl.staggerFrom('.nt, nd', 1, {y:5,ease:'ease.in'},0.2)
-        
-        // tl.from(this.img,3,{autoAlpha:0, duration: 5, ease: 'ease-in', y:20},0.5 )
-        // TweenMax.fromTo(this.img,3,{y:10 , ease:'power1.inOut'},{y:-10, ease:'power1.inOut'}).repeat(-1).yoyo(true)
+        tl.staggerFrom([this.dum, this.title, this.desc, this.email],0.5, { stagger:0.2, delay:0, ease:'sine.in' ,  autoAlpha:0, y:20})
+        tl.from('.notice', 0.5, { x:-500, autoAlpha:0, ease:'sine.in'},'-=0.2')
     }
     render(){
         return(

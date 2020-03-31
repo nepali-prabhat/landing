@@ -9,7 +9,6 @@ export default class Services extends Component {
             testimonials
         };
     }
-
     render() {
         return (
             <section className="testimonials">

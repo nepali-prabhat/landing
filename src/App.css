@@ -31,16 +31,16 @@
 }
 
 .App nav{
-  position: absolute;
+  position: sticky;
   top:0;
-  right: 0;
-  left: 0;
+  /* right: 0;
+  left: 0; */
   display: flex;
   justify-content: space-between;
   z-index: 1000;
   padding: 20px 0px;
   padding-top: 40px;
-  /* background: white; */
+  background: white;
 }
 @media screen and (max-width: 1000px){
   .App nav{
@@ -79,12 +79,13 @@ nav ul li{
   position: relative;
   height: 100vh;
   min-height: 800px;
-  padding-top: 100px;
+  /* padding-top: 100px; */
+  padding-bottom: 100px;
   display: grid;
   grid-auto-flow: column;
   align-items: center;
   justify-content: space-between;
-  transform: translateY(-120px);
+  transform: translateY(-100px);
 }
 .hero .info{
   max-width: 550px;
@@ -158,7 +159,7 @@ nav ul li{
   padding: 40px 80px;
   padding-left: 0;
   /* height: 200px; */
-  transform: translateY(25%);
+  /* transform: translateY(25%); */
   border-left: none;
   border-top-right-radius: 111px;
   border-bottom-right-radius: 111px;

@@ -14,8 +14,6 @@ class ServiceDesc extends Component{
         this.img = null
         this.plugin = CSSPlugin
     }
-    componentDidMount(){
-    }
     componentWillEnter(callback){
         console.log("entering",this.props.service.title)
         const tl = new TimelineLite({paused: false, onComplete:callback});
@@ -24,14 +22,7 @@ class ServiceDesc extends Component{
         tl.staggerFrom(".ch", 0.5, {autoAlpha:0.75, y:5},0.1,'-=1')
         tl.staggerFrom(".cd", 0.5, {autoAlpha:0.75, y:5},0,'-=1')
         tl.staggerFrom(".lm", 0.45, {autoAlpha:0.75, y:5},0,'-=1')
-        // !this.props.left && tl.from(this.container, 0.5, {autoAlpha:0, y: 15})
     }
-    // componentWillLeave(callback){
-    //     console.log("leaving", this.props.service.title)
-    //     const tl = new TimelineLite({paused: false, onComplete:callback});
-    //     this.props.left && tl.to(this.container, 0.5, {autoAlpha:0, x: 15})
-    //     !this.props.left && tl.to(this.container, 0.5, {autoAlpha:0, x: -15})
-    // }
     render(){
         return(
             <div >
@@ -73,7 +64,32 @@ class ServiceDesc extends Component{
         )
     }
 }
-
+class MobileServiceDesc extends Component{
+    componentWillEnter(callback){
+        console.log("entering",this.props.card.title)
+        // const tl = new TimelineLite({paused: false, onComplete:callback});
+        // tl.staggerFrom([this.title, this.desc, this.img], 0.5, {autoAlpha:0.5, y: 15},0.1,"label1")
+        // tl.staggerFrom(".sc", 0.5, {autoAlpha:1, y:15},0.1,'-=1')
+        // tl.staggerFrom(".ch", 0.5, {autoAlpha:0.75, y:5},0.1,'-=1')
+        // tl.staggerFrom(".cd", 0.5, {autoAlpha:0.75, y:5},0,'-=1')
+        // tl.staggerFrom(".lm", 0.45, {autoAlpha:0.75, y:5},0,'-=1')
+    }
+    render(){
+        return (
+            <div className="mobile-service-list">
+                <div className="service-card" key={"mobile-"+this.props.card.title+'-'+this.props.i}>
+                    <h3>
+                        {this.props.card.title}
+                    </h3>
+                    <p className="txt">
+                        {this.props.card.desc}
+                    </p>
+                    <LearnMore />
+                </div>
+            </div>
+        )
+    }
+}
 export default ()=> {
     const [state, setState] = React.useState({
         activeIndex:0,
@@ -137,24 +153,13 @@ export default ()=> {
                             <img className="service-img" src={state.tabs[state.activeIndex].src} alt={this.state.tabs[this.state.activeIndex].title}/>
                         </div>
                 </div> */}
-                <div className="mobile-service-list">
+                <TransitionGroupPlus>
                     {
-                        state.tabs[state.activeIndex].cards.map((c,i)=>{
-                            return (
-                                <div className="service-card" key={"mobile-"+c.title+'-'+i}>
-                                    <h3>
-                                        {c.title}
-                                    </h3>
-                                    <p className="txt">
-                                        {c.desc}
-                                    </p>
-                                    <LearnMore />
-                                </div>
-                            )
-                        })
+                        state.tabs[state.activeIndex].cards.map((c,i)=>(
+                            <MobileServiceDesc card={c} i={i}/>
+                        ))
                     }
-                </div>
-                
+                </TransitionGroupPlus>
             </section>
         )
 }
