@@ -12,6 +12,7 @@ import Path162 from './fillings/Path162';
 import Path164 from './fillings/Path164';
 import Ellipse38 from './fillings/Ellipse38';
 import Ellipse39 from './fillings/Ellipse39';
+import Ellipse90 from './fillings/Ellipse90';
 
 function App() {
   const noticeTitle = "Somtu SMS is here!"
@@ -33,9 +34,11 @@ function App() {
     <React.Fragment>
     <div className="App" >
       <nav>
-        <span className="logo">
-          Pegcore
-        </span>
+        <Link to="hero" smooth={true} spy={true} className="link d-flex">
+          <span className="logo">
+            Pegcore
+          </span>
+        </Link>
         {/* <div className="d-flex"> */}
           <ul>
             {/* <li className="link">Home</li>
@@ -60,14 +63,17 @@ function App() {
           <p className="txt">{noticeDesc}</p>
           <LearnMore small={true}/>
         </div>
+        <Ellipse90/>
       </section>
       <Services />
       <Projects />
       <Testimonial/>
       <footer className="d-flex" style={{marginBottom:'20px', marginTop:'20px'}}>
-        <span className="logo">
-          Pegcore
-        </span>
+        <Link to="hero" smooth={true} spy={true} className="link">
+          <span className="logo">
+            Pegcore
+          </span>
+        </Link>
         {/* <div className="d-flex"> */}
           {/* <ul>
             <li><Link to="hero" smooth={true} spy={true} className="link">Home</Link></li>

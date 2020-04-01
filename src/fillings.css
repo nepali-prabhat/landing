@@ -24,25 +24,25 @@
     fill: var(--primary);
 }
 .ellipse37{
-    top:360px;
-    left: -85px;
+    top: 360px;
+    left: -55px;
 }
 .ellipse37 circle{
     fill: var(--primary2);
 }
 .path161{
     z-index: -1;
-    top: 1800px;
+    top: 2000px;
     left: -260px;
 }
 .path164{
     z-index: -1;
-    top: 2650px;
+    top: 2800px;
     left: -380px;
 }
 .ellipse38{
     z-index: -1;
-    top: 3000px;
+    top: 3170px;
     left: 150px;
     transform: scale(1.75);
 }
@@ -60,12 +60,30 @@
     fill: var(--primary2)
 }
 .path162{
-    top: 3400px;
+    top: 3500px;
     left: -300px;
     transform: rotateZ(200deg);
 }
 .path162 path{
     fill:var(--primary3);
+}
+.ellipse90{
+    display:none;
+    z-index: 999;
+    left: 20px;
+    bottom: 0px;
+}
+.ellipse90 circle{
+    fill: var(--primary3);
+}
+.ellipse91 ellipse{
+    fill: var(--primary2);
+}
+.ellipse91{
+    z-index: 999;
+    display:none;
+    right: 0;
+    bottom: -60px;
 }
 @media screen and (max-width: 1600px){
     .path154 {
@@ -110,6 +128,12 @@
         right: 100px;
         transform: scale(2.5);
     }
+    .ellipse90{
+        display: none;
+    }
+    .ellipse91{
+        display: block;
+    }
     .path162{
         z-index: -1;
         top: 4500px;
@@ -119,6 +143,7 @@
 }
 @media screen and (max-width: 1000px){
     .path154 {
+        display: none;
         transform: rotateZ(-10deg);
         z-index:-1;   
         bottom: -500px;
@@ -145,6 +170,9 @@
         top: 3800px;
         left: 150px;
         transform: scale(1.75);
+    }
+    .ellipse90{
+        display: block;
     }
     .path162{
         z-index: -1;

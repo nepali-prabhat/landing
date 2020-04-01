@@ -7,6 +7,8 @@ import { TimelineMax, CSSPlugin, TweenMax } from "gsap/all";
 import Path154 from './fillings/Path154';
 import Ellipse37 from './fillings/Ellipse37';
 import Ellipse40 from './fillings/Ellipse40';
+import Ellipse90 from './fillings/Ellipse90';
+import Ellipse91 from './fillings/Ellipse91';
 
 class Hero extends React.Component{
     constructor(props){
@@ -63,6 +65,7 @@ class Hero extends React.Component{
                 <Path154/>
                 <Ellipse40/>
                 <Ellipse37/>
+                <Ellipse91/>
             </section>
         )
     }

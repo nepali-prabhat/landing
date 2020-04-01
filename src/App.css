@@ -184,6 +184,7 @@ nav ul li{
 }
 .notice-section{
   display: none;
+  position: relative;
   padding: 60px 20px;
   border-bottom: 2px solid var(--primary);
   border-top: 2px solid var(--primary);
