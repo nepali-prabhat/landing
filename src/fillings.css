@@ -1,0 +1,210 @@
+.filling{
+    z-index: -1;
+    position: absolute;
+}
+.filling.path154 path{
+    fill: var(--primary);
+}
+.path154{
+    bottom:-230px;
+    left: -560px;
+}
+.path155{
+    top:100px;
+    right:30px;
+}
+.path155 path{
+    fill: var(--primary2);
+}
+.ellipse40{
+    top:280px;
+    left: -100px;
+}
+.ellipse40 ellipse{
+    fill: var(--primary);
+}
+.ellipse37{
+    top:360px;
+    left: -85px;
+}
+.ellipse37 circle{
+    fill: var(--primary2);
+}
+.path161{
+    z-index: -1;
+    top: 1800px;
+    left: -260px;
+}
+.path164{
+    z-index: -1;
+    top: 2650px;
+    left: -380px;
+}
+.ellipse38{
+    z-index: -1;
+    top: 3000px;
+    left: 150px;
+    transform: scale(1.75);
+}
+.ellipse38 circle{
+    fill: var(--primary2)
+}
+.ellipse39{
+    z-index: -1;
+    top: 3250px;
+    right: 200px;
+    transform: scale(2.5);
+}
+
+.ellipse39 circle{
+    fill: var(--primary2)
+}
+.path162{
+    top: 3400px;
+    left: -300px;
+    transform: rotateZ(200deg);
+}
+.path162 path{
+    fill:var(--primary3);
+}
+@media screen and (max-width: 1600px){
+    .path154 {
+        bottom: -200px;
+        left: -560px;
+    }
+    .path155 {
+        top: 100px;
+        right: -40px;
+    }
+}
+@media screen and (max-width: 1400px){
+    .path154 {
+        bottom: -200px;
+        left: -600px;
+    }
+}
+@media screen and (max-width: 1100px){
+    .path154 {
+        z-index:-1;   
+        bottom: -380px;
+        left: -600px;
+    }
+    .path161 {
+        top: 2480px;
+        left: -260px;
+    }
+    .path161 path {
+        fill: var(--primary2)
+    }
+    .path164{
+        top: 3550px;
+        left: -380px;
+    }
+    .ellipse38{
+        top: 3900px;
+        left: 150px;
+        transform: scale(1.75);
+    }
+    .ellipse39{
+        top: 4300px;
+        right: 100px;
+        transform: scale(2.5);
+    }
+    .path162{
+        z-index: -1;
+        top: 4500px;
+        left: -300px;
+        transform: rotateZ(200deg);
+    }
+}
+@media screen and (max-width: 1000px){
+    .path154 {
+        transform: rotateZ(-10deg);
+        z-index:-1;   
+        bottom: -500px;
+        left: -1050px;
+    }
+    .path155 {
+        z-index:-1;
+        top: 300px;
+        right:-20px;
+        transform: scaleY(1.5);
+        /* display: none; */
+    }
+    .path155 path{
+        fill: var(--primary3);
+    }
+    .path161 path {
+        fill: var(--primary3)
+    }
+    .path164{
+        top: 3400px;
+        left: -380px;
+    }
+    .ellipse38{
+        top: 3800px;
+        left: 150px;
+        transform: scale(1.75);
+    }
+    .path162{
+        z-index: -1;
+        top: 5000px;
+        left: -300px;
+        transform: rotateZ(200deg);
+    }
+}
+@media screen and (max-width: 600px){
+    .path154 {
+        display: none;
+    }
+    .path155 {
+        z-index:-1;
+        top: 510px;
+        right:0px;
+        transform: scaleY(1.5);
+        /* display: none; */
+    }
+    .path155 path{
+        fill: var(--primary3);
+    }
+    .path161 {
+        transform: rotateZ(-10deg);
+        left: -270px;
+    }
+    .path161 path {
+        fill: var(--primary3)
+    }
+    .path164{
+        z-index: -1;
+        top: 3542px;
+        left: -420px;
+        transform: scaleY(1.5);
+    }
+    .path164 path{
+        fill: var(--primary2);
+    }
+    .ellipse38{
+        top: 4115px;
+        left: 330px;
+        z-index: -1;
+        transform: scale(1.5);
+    }
+    .ellipse38 circle{
+        fill: var(--primary3);
+    }
+    .ellipse39{
+        display: none;
+        top: 5300px;
+        left: 150px;
+        transform: scale(1.9);
+    }
+    .ellipse39 circle{
+        fill: var(--primary3);
+    }
+    .path162{
+        z-index: -1;
+        top: 5000px;
+        left: -300px;
+        transform: rotateZ(180deg);
+    }
+}

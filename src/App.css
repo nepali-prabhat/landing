@@ -167,6 +167,8 @@ nav ul li{
   justify-content: flex-end;
   align-items: center;
   width: 2000px;
+  z-index: 999;
+  background: white;
 }
 .notice-img{
   width: 140px;
@@ -187,6 +189,8 @@ nav ul li{
   border-top: 2px solid var(--primary);
 }
 .notice-section .notice-desc{
+  background: white;
+  z-index: 1000;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -226,6 +230,7 @@ nav ul li{
 
 .App .services{
   min-height: 100vh;
+  position: relative;
 }
 
 .sec-desc{
@@ -292,6 +297,7 @@ nav ul li{
 }
 .service-img-container{
   margin: 0 auto;
+  z-index: 999;
   /* opacity: 0; */
 }
 .service-img{
@@ -312,6 +318,7 @@ nav ul li{
 }
 
 .service-card{
+  z-index: 999;
   background-color: white;
   border: 2px solid var(--primary);
   border-radius: 40px;
@@ -386,10 +393,12 @@ nav ul li{
 .rt-one{
   font-size: 2.5rem;
   text-align: center;
+  font-weight: 700;
 }
 .rt-min{
   font-size: 2rem;
   text-align: center;
+  font-weight: 700;
 }
 .rt-desc{
   margin-top: 20px;

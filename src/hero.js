@@ -4,6 +4,9 @@ import heroImg from './hero.svg';
 
 import TransitionGroupPlus from 'react-transition-group-plus';
 import { TimelineMax, CSSPlugin, TweenMax } from "gsap/all";
+import Path154 from './fillings/Path154';
+import Ellipse37 from './fillings/Ellipse37';
+import Ellipse40 from './fillings/Ellipse40';
 
 class Hero extends React.Component{
     constructor(props){
@@ -57,6 +60,9 @@ class Hero extends React.Component{
                         <LearnMore small={false}/>
                     </div>
                 </div>
+                <Path154/>
+                <Ellipse40/>
+                <Ellipse37/>
             </section>
         )
     }

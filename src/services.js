@@ -5,6 +5,7 @@ import TransitionGroupPlus from 'react-transition-group-plus';
 import { TimelineLite, CSSPlugin } from "gsap/all";
 import {services} from './data';
 import LearnMore from './LearnMore';
+import Path155 from './fillings/Path155';
 
 class ServiceDesc extends Component{
     constructor(props){
@@ -162,6 +163,7 @@ export default ()=> {
                         <MobileServiceDesc cards={state.tabs[state.activeIndex].cards} />
                     }
                 </TransitionGroupPlus>
+                <Path155/>
             </section>
         )
 }
