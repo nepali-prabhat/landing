@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Carousel } from 'react-responsive-carousel';
-import {testimonials} from './data'
-export default class Services extends Component {
+import {testimonials, projects} from '../data';
+
+export default class Testimonials extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -14,9 +15,7 @@ export default class Services extends Component {
             <section className="testimonials">
                     <div className="sec-desc" style={{paddingTop:'0px'}}>
                         <h1>Talk to us <span className="highlight"> Directly</span>!</h1>
-                        <p className="txt">You can call us or shoot us a quick message!
-                            We respond in less than 1 min.
-                        </p>
+                        <p className="txt">{projects.desc}</p>
                     </div>
                     <div className="d-flex" style={{marginTop:'20px',}}>
                         <input name="email" value={this.state.email} onChange={(e)=>{this.setState({email:e.target.value})}} placeholder="Email"/>
@@ -42,7 +41,7 @@ export default class Services extends Component {
                     </div>
                 <Carousel showStatus={false} className="service-card-container" centerMode useKeyboardArrows centerSlidePercentage={50} showThumbs={false} emulateTouch>
                     {
-                        this.state.testimonials.map((c)=>{
+                        this.state.testimonials.comments.map((c)=>{
                             return (
                                 <div className="service-card" key={c.name}>
                                     <h3>
@@ -59,7 +58,7 @@ export default class Services extends Component {
                 </Carousel>
                 <div className="mobile-service-list">
                     {
-                        this.state.testimonials.map((c)=>{
+                        this.state.testimonials.comments.map((c)=>{
                             return (
                                 <div className="service-card" key={c.name}>
                                     <h3>

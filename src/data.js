@@ -1,8 +1,22 @@
-import AI from './ai.svg';
-import BitCoin from './bitcoin.svg';
-import IoT from './iot.svg';
-import MobileA from './mobile1.svg';
+import AI from './images-svgs/ai.svg';
+import BitCoin from './images-svgs/bitcoin.svg';
+import IoT from './images-svgs/iot.svg';
+import MobileA from './images-svgs/mobile1.svg';
+
+export const hero={
+    desc:` Manage your projects, resources, and financials on one open, easy-to-use platform—designed for how you actually build.`
+}
+export const notice={
+    title: "Somtu SMS is here!",
+    desc: `Our latest project Somtu, 
+    School Management system. has been released.
+    School Management system. has been released.`
+}
 export const services = {
+    desc:`Procore is a data science platform 
+            that combines Data Lineage with 
+            End-to-End Pipelines on Kubernetes, 
+            engineered for science platform that  the enterprise.`,
     tabs:[{
             title:"Artificial Intelligence",
             desc:`I's stdard dummy text ever since
@@ -106,9 +120,11 @@ export const services = {
             ]
         }
     ],
-
 }
 export const projects = {
+    desc:`Some of the projects and technology we
+            built. With each of our projects we 
+            offer something new and fresh!`,
     tabs:[{
         title:"Somtu",
         desc:`Many desktop publishing packages and web page editors now use Lorem Ipsum as
@@ -157,33 +173,36 @@ export const projects = {
     }
 ]
 }
-
-export const testimonials=[
-    {
-        name:"Prabhat Pandey",
-        position:"CEO",
-        desc:`Yep! totally the best company out there hands down. 420/69. Contrary to popular belief, Lorem Ipsum is not simply
-        random text. It has roots in a piece of classical Latin
-        literature from 45 BC, making it over 2000 years old.
-        Lorem Ipsum is not simply random text. It has roots in a
-        piece of classical Latin literature from 45 BC, making it.
-        `
-    },
-    {
-        name:"Bijay Shrestha",
-        position:"CEO",
-        desc: `
-        Tts over 2000 years old. Lorem Ipsum is not simply
-        random text. It has roots in a piece of classical Latin
-        literature from 45 BC, making it over 2000 years old.`
-    },
-    {
-        name:"Karun Shrestha",
-        position:"CEO",
-        desc: `Yep! totally the best company out there hands down. 420/69.Tts over 2000 years old. Lorem Ipsum is not simply
-        random text. It has roots in a piece of classical Latin
-        literature from 45 BC, making it over 2000 years old.
-        `
-    },
-
-]
+export const testimonials = {
+    desc:`You can call us or shoot us a 
+        quick message! 
+        We respond in less than 1 min.`,
+    comments:[
+        {
+            name:"Prabhat Pandey",
+            position:"CEO",
+            desc:`Yep! totally the best company out there hands down. 420/69. Contrary to popular belief, Lorem Ipsum is not simply
+                random text. It has roots in a piece of classical Latin
+                literature from 45 BC, making it over 2000 years old.
+                Lorem Ipsum is not simply random text. It has roots in a
+                piece of classical Latin literature from 45 BC, making it.
+            `
+        },
+        {
+            name:"Bijay Shrestha",
+            position:"CEO",
+            desc: `
+            Tts over 2000 years old. Lorem Ipsum is not simply
+            random text. It has roots in a piece of classical Latin
+            literature from 45 BC, making it over 2000 years old.`
+        },
+        {
+            name:"Karun Shrestha",
+            position:"CEO",
+            desc: `Yep! totally the best company out there hands down. 420/69.Tts over 2000 years old. Lorem Ipsum is not simply
+            random text. It has roots in a piece of classical Latin
+            literature from 45 BC, making it over 2000 years old.
+            `
+        },
+    ]
+}

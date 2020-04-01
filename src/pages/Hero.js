@@ -1,14 +1,13 @@
 import React from 'react';
-import LearnMore from './LearnMore'
-import heroImg from './hero.svg';
+import { TimelineMax, CSSPlugin } from "gsap/all";
 
-import TransitionGroupPlus from 'react-transition-group-plus';
-import { TimelineMax, CSSPlugin, TweenMax } from "gsap/all";
-import Path154 from './fillings/Path154';
-import Ellipse37 from './fillings/Ellipse37';
-import Ellipse40 from './fillings/Ellipse40';
-import Ellipse90 from './fillings/Ellipse90';
-import Ellipse91 from './fillings/Ellipse91';
+import LearnMore from './LearnMore'
+import HeroImg from '../images-svgs/hero.svg';
+import {hero,notice} from '../data';
+import Path154 from '../fillings/Path154';
+import Ellipse37 from '../fillings/Ellipse37';
+import Ellipse40 from '../fillings/Ellipse40';
+import Ellipse91 from '../fillings/Ellipse91';
 
 class Hero extends React.Component{
     constructor(props){
@@ -24,10 +23,6 @@ class Hero extends React.Component{
         this.btn = null;
         this.img = null;
         this.plugin=CSSPlugin;
-        this.noticeTitle = "Somtu SMS is here!"
-        this.noticeDesc = `Our latest project Somtu, 
-        School Management system. has been released.
-        School Management system. has been released.`
     }
     componentDidMount(){
         const tl = new TimelineMax({paused:false})
@@ -43,22 +38,20 @@ class Hero extends React.Component{
                         <span >You want to build. We want to</span> 
                     <span className="highlight" ref={r=>this.highlight=r} > help.</span>
                     </h1>
-                    <p className="txt" ref={r=>this.desc=r}>
-                    Manage your projects, resources, and financials on one open, easy-to-use platform—designed for how you actually build.
-                    </p>
+                    <p className="txt" ref={r=>this.desc=r}>{hero.desc}</p>
                     <div className="hero-contact"   >
                     <input name="email" value={this.state.email} ref={r=>this.email=r} placeholder="Email" onChange={(e)=>{this.setState({email:e.target.value})}}/>
                     <button ref={r=>this.btn=r} className="first-btn">Get Started</button>
                     </div>
                 </div>
                 <div ref={r=>this.img=r}>
-                    <img className="hero-img" src={heroImg} alt="Pegcore main attraction" />
+                    <img className="hero-img" src={HeroImg} alt="Pegcore main attraction" />
                 </div>
                 <div className="notice">
                     <div className="notice-img"></div>
                     <div className="notice-desc">
-                        <h3 className="nt">{this.noticeTitle}</h3>
-                        <p className="txt nd">{this.noticeDesc}</p>
+                        <h3 className="nt">{notice.title}</h3>
+                        <p className="txt nd">{notice.desc}</p>
                         <LearnMore small={false}/>
                     </div>
                 </div>

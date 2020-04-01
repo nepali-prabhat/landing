@@ -44,10 +44,6 @@
 }
 @media screen and (max-width: 1000px){
   .App nav{
-  }
-}
-@media screen and (max-width: 1000px){
-  .App nav{
     padding: 20px 40px;
     display: grid;
     justify-content: center;
@@ -64,7 +60,6 @@ nav ul{
   grid-auto-flow: column;
   gap: 40px;
   align-items: center;
-  /* margin-right: 60px; */
 }
 nav ul li{
   list-style: none;
@@ -109,14 +104,10 @@ li:hover .link{
   .hero .hero-img{
     width: 550px;
   }
-  .hero .info{
-  }
 }
 @media screen and (max-width: 1600px) {
   .hero .hero-img{
     width: 460px;
-  }
-  .hero .info{
   }
 }
 @media screen and (max-width: 1400px) {
@@ -219,25 +210,15 @@ li:hover .link{
     flex-flow: column;
     align-items: center;
     justify-content: center;
-    /* gap: 40px; */
     width: 100%;
   }
   .notice-desc{
     margin:0;
-    /* margin-top: 40px; */
   }
   .notice-desc > *{
     text-align: center;
   }
 }
-
-
-
-
-
-
-
-
 .App .services{
   min-height: 100vh;
   position: relative;
@@ -291,24 +272,19 @@ li:hover .link{
   display: flex;
   justify-content: space-between;
   margin-top: 60px;
-  /* position: relative; */
   z-index: 999;
 }
 .content-desc{
   max-width: 550px;
 }
-/* .content-desc h2{
-} */
 .content-desc p{
   margin-top: 15px;
 }
 .content-desc > *{
-  /* opacity: 0; */
 }
 .service-img-container{
   margin: 0 auto;
   z-index: 999;
-  /* opacity: 0; */
 }
 .service-img{
   width:200px;
@@ -318,7 +294,6 @@ li:hover .link{
 }
 
 .service-card-container{
-  /* grid-column: 1/ 3; */
   background-color: white;
   margin-top: 80px;
   margin-bottom: 80px;
@@ -336,7 +311,6 @@ li:hover .link{
   margin-bottom: 40px;
   padding: 40px 50px;
   min-height: 250px;
-  /* height: 100%; */
   min-width: 400px;
   display: flex;
   flex-direction: column;
@@ -427,9 +401,6 @@ li:hover .link{
   }
 }
 @media screen and (max-width: 1100px){
-  .tabs-container{
-    /* display: grid; */
-  }
   .slideshow-tabs{
     display: flex;
     flex-flow: column;
@@ -476,15 +447,10 @@ li:hover .link{
   }
   .projects-list li{
     text-align: left;
-    /* padding-left: 0; */
-    /* margin-bottom: 0; */
   }
   .project-img{
-    /* width: 450px; */
     margin-top: 40px;
   }
-  /* .mobile-service-list{
-  } */
 }
 
 
@@ -504,14 +470,8 @@ li:hover .link{
   .slideshow-tabs{
     min-width: 100% !important;
   }
-  .service-card{
-
-  }
   .content-desc div{
     max-width: 320px !important;
-  }
-  .sec-desc{
-    /* width: 320px !important; */
   }
   .rt-wrapper{
     grid-auto-flow: row;

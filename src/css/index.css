@@ -1,14 +1,17 @@
 :root{
+  /* default color for headings and texts */
   --black1: #1c151d;
   --black2: #3e3840;
 
+  
+  /* to override colors change these */
   --primary: #ffd43f;
   --primary2 : #ffe99f;
   --primary3: #fff4cf;
-
   --shadow1: 0px 0px 12px -4px #d1a400;
   --shadow2: 0px 0px 12px -8px inset #d1ab21;
-
+  
+  /* ignore */
   --gap: 20px;
 }
 
@@ -50,9 +53,6 @@ body {
   width: 4%;
   margin-left: 4px;
   transform: translateY(4px);
-}
-.learnmore:hover .arrow{
-  /* margin-left: 10px; */
 }
 .arrow path{
   fill: var(--primary)
@@ -153,9 +153,6 @@ input:focus{
   :root{
     --gap: 25px;
   } 
-  h1{
-    /* font-size: 1.65em; */
-  }
 }
 @media screen and (max-width: 1400px) {
   :root{
@@ -171,12 +168,6 @@ input:focus{
   }
   h1{
     font-size: 1.75em;
-  }
-}
-@media screen and (min-width: 999px) {
-  body{
-    /* font-size: 20px; */
-    
   }
 }
 @media screen and (max-width: 999px) {

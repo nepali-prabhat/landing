@@ -35,10 +35,16 @@
     top: 2000px;
     left: -260px;
 }
+.path161 path {
+    fill: var(--primary)
+}
 .path164{
     z-index: -1;
     top: 2800px;
     left: -380px;
+}
+.path164 path {
+    fill: var(--primary)
 }
 .ellipse38{
     z-index: -1;
@@ -154,7 +160,6 @@
         top: 300px;
         right:-20px;
         transform: scaleY(1.5);
-        /* display: none; */
     }
     .path155 path{
         fill: var(--primary3);
@@ -190,7 +195,6 @@
         top: 510px;
         right:0px;
         transform: scaleY(1.5);
-        /* display: none; */
     }
     .path155 path{
         fill: var(--primary3);
