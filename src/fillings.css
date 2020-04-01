@@ -3,7 +3,7 @@
     position: absolute;
 }
 .filling.path154 path{
-    fill: var(--primary);
+    fill: var(--primary2);
 }
 .path154{
     bottom:-230px;
@@ -17,14 +17,14 @@
     fill: var(--primary2);
 }
 .ellipse40{
-    top:280px;
+    top:340px;
     left: -100px;
 }
 .ellipse40 ellipse{
     fill: var(--primary);
 }
 .ellipse37{
-    top: 360px;
+    top: 425px;
     left: -55px;
 }
 .ellipse37 circle{
